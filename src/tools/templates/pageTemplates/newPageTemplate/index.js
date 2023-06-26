@@ -1,0 +1,1 @@
+export * from "./__pageName__Page"
