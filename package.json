@@ -1,7 +1,7 @@
 {
-  "homepage": "http://grilo16.github.io/", 
+  "homepage": "https://grilo16.github.io/client-duckys-revenge-3d/", 
   "name": "client-duckys-revenge-3d",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "dependencies": {
     "@react-three/drei": "^9.74.15",

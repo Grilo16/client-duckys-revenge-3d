@@ -10,7 +10,7 @@ function App() {
 
 
   return (
-    <Router>
+    <Router basename="client-duckys-revenge-3d/">
       <AppBaseComponent registeredPages={registeredPages}>
         <GameConsoleComponent>
         <Routes>
