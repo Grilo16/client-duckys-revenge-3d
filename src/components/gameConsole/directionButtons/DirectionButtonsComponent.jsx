@@ -14,24 +14,28 @@ export const DirectionButtonsComponent = () => {
         document.addEventListener("keydown", (e) => 
                                     e.key === " " 
                                     ? dispatch(jumpPressed())
-                                    : e.key === "w"  && !directions.includes("up")
+                                    : ["w", "W", "ArrowUp"].includes(e.key)  
+                                    && !directions.includes("up")
                                     ? dispatch(setDirection("up"))
-                                    : e.key === "s" && !directions.includes("down")
+                                    : ["s", "S", "ArrowDown"].includes(e.key) 
+                                    && !directions.includes("down")
                                     ? dispatch(setDirection("down"))
-                                    : e.key === "a" && !directions.includes("left")
+                                    : ["a", "A", "ArrowLeft"].includes(e.key)  
+                                    && !directions.includes("left")
                                     ? dispatch(setDirection("left"))
-                                    : e.key === "d" && !directions.includes("right")
+                                    : ["d", "D", "ArrowRight"].includes(e.key)  
+                                    && !directions.includes("right")
                                     ? dispatch(setDirection("right"))
                                     : null
                                 )
         document.addEventListener("keyup", (e) => 
-                                    e.key === "w" 
+                                    ["w", "W", "ArrowUp"].includes(e.key)  
                                     ? dispatch(removedDirection("up"))
-                                    : e.key === "s"
+                                    : ["s", "S", "ArrowDown"].includes(e.key) 
                                     ? dispatch(removedDirection("down"))
-                                    : e.key === "a"
+                                    : ["a", "A", "ArrowLeft"].includes(e.key)  
                                     ? dispatch(removedDirection("left"))
-                                    : e.key === "d"
+                                    : ["d", "D", "ArrowRight"].includes(e.key)  
                                     ? dispatch(removedDirection("right"))
                                     : e.key === " "
                                     ? dispatch(jumpReleased())

@@ -1,6 +1,7 @@
 import styled from "styled-components"
 
 export const GameContainerDiv = styled.div`
+position: relative;
 border-radius: 10px;
 grid-column: 1;
 grid-row: 1;
@@ -26,6 +27,7 @@ transform: translate(0, 5rem);
 `
 
 export const GameDisplayDiv = styled.div`
+position: relative;
 grid-column: 1;
 grid-row: 1;
 display: grid;

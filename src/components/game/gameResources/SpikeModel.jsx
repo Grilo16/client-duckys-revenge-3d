@@ -5,13 +5,12 @@ Command: npx gltfjsx@6.2.3 public/static/Spike.glb
 
 import React, { useMemo, useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
-import { InstancedRigidBodies, MeshCollider, RigidBody, CuboidCollider } from '@react-three/rapier'
+import { InstancedRigidBodies, CuboidCollider } from '@react-three/rapier'
 
 export const SpikeModel = (props) =>  {
-  const { nodes, materials } = useGLTF('static/singleMeshSpike.glb')
+  const { nodes, materials } = useGLTF('static/Spike.glb')
 
-
-   const count = 50
+   const count = 50 
    const spikeRef = useRef()
  
    const instances = useMemo(() => {
@@ -28,7 +27,6 @@ export const SpikeModel = (props) =>  {
      return instances;
    }, []);
  
-
   return (
 
       <InstancedRigidBodies 
@@ -47,76 +45,11 @@ export const SpikeModel = (props) =>  {
 
         ]}
         >
-          <instancedMesh frustumCulled={false} args={[undefined, undefined, count]} count={count} geometry={nodes.Core003.geometry} material={materials.Material__51} />
+          <instancedMesh frustumCulled={false} args={[undefined, undefined, count]} count={count} geometry={nodes.Core003.geometry} material={materials.spike_metal_material} />
         
       </InstancedRigidBodies>
-      // <MeshCollider>
-      //     <mesh geometry={nodes.Core003.geometry} material={materials['fallback Material']} scale={0.5} />
-      //  </MeshCollider>
-       
-      //  <MeshCollider>
-      //     <mesh position={[0, 0, 0]} geometry={nodes.Spike_033.geometry} material={materials['fallback Material']} scale={0.5} />
-      //  </MeshCollider>
-
-      //  <MeshCollider  >
-      //     <mesh position={[0, 0, 1]} geometry={nodes.Spike_035.geometry} material={materials['fallback Material']} scale={0.5} />
-      //  </MeshCollider>
-
-      //     <MeshCollider  >
-      //       <mesh  position={[0, 0.55, 0.5]} rotation={[-Math.PI / 2, 0, 0]} geometry={nodes.Spike_032.geometry} material={materials['fallback Material']} scale={0.5} />
-      //     </MeshCollider>
-
-      //  <MeshCollider  >
-      //       <mesh  position={[0, -0.45, 0.5]} rotation={[-Math.PI / 2, 0, 0]} geometry={nodes.Spike_025.geometry} material={materials['fallback Material']} scale={0.5} />
-      //     </MeshCollider>
-
-      //  <MeshCollider  >
-      //       <mesh  position={[0.52, 0, 0.5]} rotation={[-Math.PI / 2, Math.PI / 2, 0]} geometry={nodes.Spike_034.geometry} material={materials['fallback Material']} scale={0.5} />
-      //   </MeshCollider>
-
-      //  <MeshCollider  >
-      //       <mesh  position={[-0.4, 0, 0.5]} rotation={[-Math.PI / 2, Math.PI / 2, 0]} geometry={nodes.Spike_024.geometry} material={materials['fallback Material']} scale={0.5} />
-      //   </MeshCollider>
-      //  </RigidBody>
-   
   )
 }
 
-useGLTF.preload('static/singleMeshSpike.glb')
+useGLTF.preload('static/Spike.glb')
 
-
-// return (
-
-//   <RigidBody position={[0.69, 5.011, 5.308]}>
-
-//   <MeshCollider>
-//       <mesh geometry={nodes.Core003.geometry} material={materials['fallback Material']} scale={0.5} />
-//    </MeshCollider>
-   
-//    <MeshCollider>
-//       <mesh position={[0, 0, 0]} geometry={nodes.Spike_033.geometry} material={materials['fallback Material']} scale={0.5} />
-//    </MeshCollider>
-
-//    <MeshCollider  >
-//       <mesh position={[0, 0, 1]} geometry={nodes.Spike_035.geometry} material={materials['fallback Material']} scale={0.5} />
-//    </MeshCollider>
-
-//       <MeshCollider  >
-//         <mesh  position={[0, 0.55, 0.5]} rotation={[-Math.PI / 2, 0, 0]} geometry={nodes.Spike_032.geometry} material={materials['fallback Material']} scale={0.5} />
-//       </MeshCollider>
-
-//    <MeshCollider  >
-//         <mesh  position={[0, -0.45, 0.5]} rotation={[-Math.PI / 2, 0, 0]} geometry={nodes.Spike_025.geometry} material={materials['fallback Material']} scale={0.5} />
-//       </MeshCollider>
-
-//    <MeshCollider  >
-//         <mesh  position={[0.52, 0, 0.5]} rotation={[-Math.PI / 2, Math.PI / 2, 0]} geometry={nodes.Spike_034.geometry} material={materials['fallback Material']} scale={0.5} />
-//     </MeshCollider>
-
-//    <MeshCollider  >
-//         <mesh  position={[-0.4, 0, 0.5]} rotation={[-Math.PI / 2, Math.PI / 2, 0]} geometry={nodes.Spike_024.geometry} material={materials['fallback Material']} scale={0.5} />
-//     </MeshCollider>
-//    </RigidBody>
-
-// )
-// }

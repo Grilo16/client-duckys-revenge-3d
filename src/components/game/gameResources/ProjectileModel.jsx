@@ -1,32 +1,27 @@
-import { Cloud } from "@react-three/drei";
-import { useFrame, useThree } from "@react-three/fiber";
+import { useThree } from "@react-three/fiber";
 import { RigidBody } from "@react-three/rapier";
 import { useEffect, useRef, useState } from "react";
 import { Attractor } from "@react-three/rapier-addons"
 import { useDispatch, useSelector } from "react-redux";
-import { projectileExpired, selectedFiredProjectiles, selectedPlayerPosition } from "../../../features/reducers/gameReducer";
+import { projectileExpired } from "../../../features/reducers/gameReducer";
 import { selectedDirection } from "../../../features/reducers/gameConsoleReducer";
 
 export const ProjectileModel = ({projectile, visible}) => {
-  const dispatch = useDispatch()
-  const [removed, setRemoved] = useState(false)
-  const projectileRef = useRef()
-  const [colisionStatus, setColisionStatus] = useState(false)
-  const [projectileId, setProjectileId] = useState(projectile.key)
-  const [position, setPosition] = useState(null)
-  const [direction, setDirection] = useState(null)
   const {scene, mouse} = useThree()
-  const ducky = scene.children.find((model) => model.name ==="ducky" )
-
+  const projectileRef = useRef()
+  const dispatch = useDispatch()
   const movingDirection = useSelector(selectedDirection)
+  const [colisionStatus, setColisionStatus] = useState(false)
+
+  const ducky = scene.children.find((model) => model.name ==="ducky" )
 
   useEffect(() => {
     const {x, y, z} = {...ducky?.position}
-    projectileRef?.current?.setTranslation({x: -1.5 + x, y: y + 0.1, z : z - (mouse.x/2)})
+    projectileRef?.current?.setTranslation({x: -2 + x, y: y + 0.8, z : z - (mouse.x/2)})
     projectileRef?.current?.setLinvel({
-        x: movingDirection === "up" ? -20 : -10,
-        y: 9, 
-        z:  Math.PI * -5 * mouse.x + (movingDirection === "right" ? -5 : movingDirection === "left" ? +5 : 0)
+        x: movingDirection === "up" ? -20 : -15,
+        y: 9 , 
+        z:  Math.PI * -8 * mouse.x + (movingDirection === "right" ? -5 : movingDirection === "left" ? +5 : 0)
       })
     
   }, [])
@@ -55,7 +50,7 @@ export const ProjectileModel = ({projectile, visible}) => {
       }
     }
     >
-      <Attractor strength={0.5} />
+      <Attractor strength={5} />
       
       <mesh castShadow>
           <sphereGeometry args={[0.42, 16, 16]} />

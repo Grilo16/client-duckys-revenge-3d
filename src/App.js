@@ -1,4 +1,4 @@
-import { Link, BrowserRouter as Router, Routes } from "react-router-dom"
+import { BrowserRouter as Router, Routes } from "react-router-dom"
 import { generateRoutes, registeredPages } from "./pages";
 import { AppBaseComponent, GameConsoleComponent } from "components";
 
@@ -13,7 +13,6 @@ function App() {
     <Router>
       <AppBaseComponent registeredPages={registeredPages}>
         <GameConsoleComponent>
-
         <Routes>
           {appRoutes}
         </Routes>

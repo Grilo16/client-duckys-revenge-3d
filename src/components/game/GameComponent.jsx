@@ -1,22 +1,23 @@
-import { Canvas, useFrame, useThree } from '@react-three/fiber'
-import { Physics, RigidBody, Debug, CuboidCollider } from "@react-three/rapier";
-import { Box, Cloud, Environment, FirstPersonControls, OrbitControls, PerspectiveCamera, PointerLockControls, QuadraticBezierLine, SoftShadows, Text } from "@react-three/drei";
-import { Suspense, useEffect, useMemo, useState } from 'react';
-import { DuckyMagicianModel, GroundModel, ProjectileModel, Projectiles, SkeletonEnemyModel, SpikeModel } from './gameResources';
+import { Canvas, useFrame } from '@react-three/fiber'
+import { Physics } from "@react-three/rapier";
+import {  Environment, Text } from "@react-three/drei";
+import React, { Suspense, useEffect } from 'react';
+import { DuckyModel, GroundModel, ProjectileModel, SkeletonEnemyModel, SpikeModel } from './gameResources';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectedClickStatus } from '../../features/reducers/gameConsoleReducer';
-import { projectileExpired, projectileFired, selectedFiredProjectiles, selectedPlayerPosition } from '../../features/reducers/gameReducer';
+import { selectedClickStatus, selectedPauseStatus } from '../../features/reducers/gameConsoleReducer';
+import { projectileFired, selectedFiredProjectiles } from '../../features/reducers/gameReducer';
+import { GameMenuComponent } from './gameMenu/GameMenuComponent';
 
 export const GameComponent = () => {
     const dispatch = useDispatch()
     const clickStatus = useSelector(selectedClickStatus)
     const firedProjectiles = useSelector(selectedFiredProjectiles)
-    const [projectileList, setProjectileList] = useState({})
+    const pause = useSelector(selectedPauseStatus)
     
     const projectiles = firedProjectiles.map((projectile, index) => projectile.status === "fired" ? <ProjectileModel  key={index} projectile={projectile} /> : null)
     
     useEffect(() => {
-        if(clickStatus){
+        if(clickStatus && !pause){
             const key = JSON.stringify(Math.random(1000) * Date.now())
             dispatch(projectileFired({
                 key : key,
@@ -25,20 +26,40 @@ export const GameComponent = () => {
         }
     }, [clickStatus])
 
+
+    const Pause = () => {
+        useFrame(() => null, 1)
+    };
+
+    const Loading = () => {
+        return (
+            <Text
+            scale={[1, 1, 1]}
+            color="black"
+            anchorX="center"
+            anchorY="middle"
+        >
+            Loading ...
+        </Text>
+        )
+    };
+
     return (
-        <Canvas shadows style={{poiterEvents: "none"}} camera={{ far: 1000, fov: 85}} >
-            <Suspense fallback={null}>
-                <Physics debug >
-                    <pointLight position={[10, 10, 10]} castShadow />
-                    <Environment preset="forest" />
-                    <DuckyMagicianModel/>
+        <React.Fragment>
+        <Canvas style={{poiterEvents: "none"}} camera={{ far: 1000, fov: 85}} shadows >
+                {pause ? <Pause/> : null}
+            <Suspense fallback={<Loading/>}>
+                    <Environment files="./static/sky_2k.hdr" background />
+                <Physics paused={pause}>
+                    <DuckyModel/>
                     <SkeletonEnemyModel/>
                     <SpikeModel/>
                     <GroundModel/>
                     {projectiles}
-
                 </Physics>
             </Suspense>
         </Canvas>
+        {pause ? <GameMenuComponent/> : null}
+        </React.Fragment>
     )
 };

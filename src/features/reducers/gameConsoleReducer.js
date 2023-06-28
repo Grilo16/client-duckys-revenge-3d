@@ -6,12 +6,16 @@ const gameConsoleReducer = createSlice({
     
     initialState: {
         direction: ["neutral"],
+        pauseStatus: false,
         clickStatus: false,
         jumpStatus: false,
     },
 
     reducers: {
 
+        togglePause: (state, action) => {
+            state.pauseStatus = !state.pauseStatus
+        },
 
         setDirection: (state, action) => {
             if (!state.direction.includes(action.payload)){
@@ -44,8 +48,9 @@ const gameConsoleReducer = createSlice({
 })
 
 export default gameConsoleReducer.reducer
-export const {  jumpPressed, jumpReleased, setDirection, removedDirection, clickPressed, clickReleased } = gameConsoleReducer.actions
+export const {  jumpPressed, jumpReleased, setDirection, removedDirection, clickPressed, clickReleased, togglePause } = gameConsoleReducer.actions
 
+export const selectedPauseStatus = (state) => state.gameConsole.pauseStatus
 export const selectedClickStatus = (state) => state.gameConsole.clickStatus
 export const selectedJumpStatus = (state) => state.gameConsole.jumpStatus
 export const selectedDirection = (state) => state.gameConsole.direction.at(-1)

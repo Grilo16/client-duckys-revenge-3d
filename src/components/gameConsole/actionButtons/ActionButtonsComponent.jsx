@@ -1,7 +1,7 @@
-import { useSelector } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 import { ActionButton, ClickBtnLabel, JumpBtnLabel } from "../gameConsoleResources";
 import { ActionButtonDiv, ActionButtonGroupDiv } from "./ActionButtonsStyles";
-import { selectedClickStatus, selectedJumpStatus } from "../../../features/reducers/gameConsoleReducer";
+import { selectedClickStatus, selectedJumpStatus, togglePause } from "../../../features/reducers/gameConsoleReducer";
 
 
 export const ActionButtonsComponent = () => {

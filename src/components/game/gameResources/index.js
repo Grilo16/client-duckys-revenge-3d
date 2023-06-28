@@ -1,4 +1,4 @@
-export * from "./DuckyMagicianModel"
+export * from "./DuckyModel"
 export * from "./GroundModel"
 export * from "./SpikeModel"
 export * from "./ProjectileModel"

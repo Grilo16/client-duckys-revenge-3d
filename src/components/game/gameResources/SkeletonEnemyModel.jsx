@@ -5,7 +5,7 @@ Command: npx gltfjsx@6.2.3 public/static/skeletonEnemy.glb
 
 import React, { useMemo, useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
-import { CuboidCollider, InstancedRigidBodies, MeshCollider, RigidBody } from '@react-three/rapier'
+import { CuboidCollider, InstancedRigidBodies } from '@react-three/rapier'
 
 export const SkeletonEnemyModel = (props) =>  {
   const { nodes, materials } = useGLTF('static/skeletonEnemy.glb')
@@ -40,36 +40,11 @@ export const SkeletonEnemyModel = (props) =>  {
           <CuboidCollider args={[5, 5, 6]} position={[0, 0, 0 -offset]}/>,
         ]}
         >
-      <instancedMesh frustumCulled={false} args={[undefined, undefined, count]} count={count} geometry={nodes.head.geometry} material={materials['fallback Material']}/>
+      <instancedMesh frustumCulled={false} args={[undefined, undefined, count]} count={count} geometry={nodes.head003.geometry} material={materials.spike_metal_material}/>
       
       </InstancedRigidBodies>
   )
 
-  // return (
-  //     <RigidBody position={[-3, 5.011, 5.308]}  rotation={[-Math.PI / 2, 0, 0]} scale={2}>
-
-  //       <MeshCollider>
-  //       <mesh position={[0, 0, 0.5]} geometry={nodes.head.geometry} material={materials['fallback Material']} scale={0.05} />
-  //       </MeshCollider>
-
-  //     <MeshCollider>
-  //       <mesh position={[0, 0, 0]} geometry={nodes.torso.geometry} material={materials['fallback Material']} scale={0.05} />
-  //     </MeshCollider>
-
-  //     <MeshCollider>
-  //       <mesh position={[0, -0.4, -0.1]} geometry={nodes.RightArm.geometry} material={materials['fallback Material']} scale={0.05} />
-  //     </MeshCollider>
-
-  //       <MeshCollider>
-  //       <mesh position={[0, 0.4, -0.1]} geometry={nodes.leftArm.geometry} material={materials['fallback Material']} scale={0.05} />
-  //       </MeshCollider>
-
-  //     <MeshCollider>
-  //       <mesh position={[0, 0, -0.6]} geometry={nodes.legs.geometry} material={materials['fallback Material']} scale={0.05} />
-  //       </MeshCollider>
-
-  //     </RigidBody>
-  // )
 }
 
 useGLTF.preload('static/skeletonEnemy.glb')
