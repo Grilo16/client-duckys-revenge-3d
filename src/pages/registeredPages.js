@@ -16,4 +16,4 @@ export const registerPage = (name, path, element) => {
 
 export const generateRoutes = (navigationObjects) => {
     return navigationObjects.map(({name, ...routeObj}, index) => <Route key={index} {...routeObj}/>)
-} 
+}

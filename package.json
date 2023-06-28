@@ -1,4 +1,5 @@
 {
+  "homepage": "www.duckydomain.com", 
   "name": "client-duckys-revenge-3d",
   "version": "0.1.0",
   "private": true,
@@ -30,7 +31,9 @@
     "generate:components": "node ./src/tools/generateComponents.js",
     "generate:pages": "node ./src/tools/generatePages.js",
     "generate:styles": "node ./src/tools/generateStyles.js",
-    "generate:features": "node ./src/tools/generateFeatures.js"
+    "generate:features": "node ./src/tools/generateFeatures.js",
+    "predeploy" : "npm run build",
+    "deploy" : "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -49,5 +52,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^5.0.0"
   }
 }
