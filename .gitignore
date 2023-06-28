@@ -10,7 +10,6 @@
 
 # production
 /build
-# src/tools
 
 # misc
 .DS_Store

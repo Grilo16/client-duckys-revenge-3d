@@ -1,5 +1,5 @@
 {
-  "homepage": "www.duckydomain.com", 
+  "homepage": "http://grilo16.github.io/", 
   "name": "client-duckys-revenge-3d",
   "version": "0.1.0",
   "private": true,
@@ -28,10 +28,6 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "generate:components": "node ./src/tools/generateComponents.js",
-    "generate:pages": "node ./src/tools/generatePages.js",
-    "generate:styles": "node ./src/tools/generateStyles.js",
-    "generate:features": "node ./src/tools/generateFeatures.js",
     "predeploy" : "npm run build",
     "deploy" : "gh-pages -d build"
   },
