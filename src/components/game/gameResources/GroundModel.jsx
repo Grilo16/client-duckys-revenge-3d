@@ -6,14 +6,14 @@ import { useLoader } from '@react-three/fiber'
 import * as THREE from 'three';
 
 export const GroundModel = (props) => {
-    const { nodes } = useGLTF('static/Ground.glb')
-  const {  materials: textureMaterials } = useGLTF('static/forestLeavesTextures/forest_leaves_02_4k.gltf')
+    const { nodes } = useGLTF(process.env.PUBLIC_URL+'/static/Ground.glb')
+  const {  materials: textureMaterials } = useGLTF(process.env.PUBLIC_URL+'/static/forestLeavesTextures/forest_leaves_02_4k.gltf')
 
 
   const [colorMap, normalMap, roughnessMap] = useLoader(TextureLoader, [
-    './static/forestLeavesTextures/textures/forest_leaves_02_diffuse_4k.jpg',
-    './static/forestLeavesTextures/textures/forest_leaves_02_nor_gl_4k.jpg',
-    './static/forestLeavesTextures/textures/forest_leaves_02_rough_4k.jpg',
+    process.env.PUBLIC_URL+'/static/forestLeavesTextures/textures/forest_leaves_02_diffuse_4k.jpg',
+    process.env.PUBLIC_URL+'/static/forestLeavesTextures/textures/forest_leaves_02_nor_gl_4k.jpg',
+    process.env.PUBLIC_URL+'/static/forestLeavesTextures/textures/forest_leaves_02_rough_4k.jpg',
   ])
 
 

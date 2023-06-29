@@ -49,12 +49,12 @@ export const GameComponent = () => {
         <Canvas style={{poiterEvents: "none"}} camera={{ far: 1000, fov: 85}} shadows >
                 {pause ? <Pause/> : null}
             <Suspense fallback={<Loading/>}>
-                    <Environment files="./static/sky_2k.hdr" background />
+                    <Environment files={process.env.PUBLIC_URL+"/static/sky_2k.hdr"} background />
                 <Physics paused={pause}>
                     <DuckyModel/>
                     <SkeletonEnemyModel/>
                     <SpikeModel/>
-                    <GroundModel/>
+                    <GroundModel/> 
                     {projectiles}
                 </Physics>
             </Suspense>

@@ -12,7 +12,7 @@ import { useFrame, useThree } from '@react-three/fiber'
 import * as THREE from "three";
 
 export const DuckyModel = (props) => {
-  const { nodes, materials } = useGLTF('static/DuckyAssets/rubber_duck_toy_4k.gltf')
+  const { nodes, materials } = useGLTF(process.env.PUBLIC_URL+'/static/DuckyAssets/rubber_duck_toy_4k.gltf')
   const {mouse} = useThree()
   
 
@@ -89,4 +89,4 @@ const changeDirection = (direction, delta) =>
   )
 }
 
-useGLTF.preload('static/DuckyAssets/rubber_duck_toy_4k.gltf')
+useGLTF.preload(process.env.PUBLIC_URL+'/static/DuckyAssets/rubber_duck_toy_4k.gltf')

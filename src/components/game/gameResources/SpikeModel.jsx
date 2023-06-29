@@ -8,7 +8,7 @@ import { useGLTF } from '@react-three/drei'
 import { InstancedRigidBodies, CuboidCollider } from '@react-three/rapier'
 
 export const SpikeModel = (props) =>  {
-  const { nodes, materials } = useGLTF('static/Spike.glb')
+  const { nodes, materials } = useGLTF(process.env.PUBLIC_URL+'/static/Spike.glb')
 
    const count = 50 
    const spikeRef = useRef()
@@ -51,5 +51,5 @@ export const SpikeModel = (props) =>  {
   )
 }
 
-useGLTF.preload('static/Spike.glb')
+useGLTF.preload(process.env.PUBLIC_URL+'/static/Spike.glb')
 

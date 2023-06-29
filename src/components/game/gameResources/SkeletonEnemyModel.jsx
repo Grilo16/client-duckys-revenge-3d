@@ -8,7 +8,7 @@ import { useGLTF } from '@react-three/drei'
 import { CuboidCollider, InstancedRigidBodies } from '@react-three/rapier'
 
 export const SkeletonEnemyModel = (props) =>  {
-  const { nodes, materials } = useGLTF('static/skeletonEnemy.glb')
+  const { nodes, materials } = useGLTF(process.env.PUBLIC_URL+'/static/skeletonEnemy.glb')
 
   const count = 30
   const sekeltonRef = useRef()
@@ -47,4 +47,4 @@ export const SkeletonEnemyModel = (props) =>  {
 
 }
 
-useGLTF.preload('static/skeletonEnemy.glb')
+useGLTF.preload(process.env.PUBLIC_URL+'/static/skeletonEnemy.glb')
