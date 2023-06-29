@@ -1,11 +1,8 @@
 export const ActionButton = ({pressed, ...props}) => {
     const pressedButton =  (
       <svg
-        width="100%"
-        height="100%"
         viewBox="0 0 74 73"
         fill="none"
-        style={{gridColumn: "1", gridRow:"1/span 3"}}
         xmlns="http://www.w3.org/2000/svg"
         {...props}
       >
@@ -65,11 +62,9 @@ export const ActionButton = ({pressed, ...props}) => {
 
     const UnpressedButton = (
       <svg
-        width="100%"
-        height="100%"
+        width="80%"
         viewBox="0 0 74 73"
         fill="none"
-        style={{gridColumn: "1", gridRow:"1/span 3"}}
         xmlns="http://www.w3.org/2000/svg"
         {...props}
       >

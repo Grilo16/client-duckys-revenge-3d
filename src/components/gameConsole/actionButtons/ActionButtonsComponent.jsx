@@ -1,7 +1,8 @@
 import { useDispatch, useSelector } from "react-redux"
-import { ActionButton, ClickBtnLabel, JumpBtnLabel } from "../gameConsoleResources";
+import { ActionButton, ClickBtnLabel, FlyButtonSVG, JumpBtnLabel } from "../gameConsoleResources";
 import { ActionButtonDiv, ActionButtonGroupDiv } from "./ActionButtonsStyles";
 import { selectedClickStatus, selectedJumpStatus, togglePause } from "../../../features/reducers/gameConsoleReducer";
+import { ShootButtonSVG } from "../gameConsoleResources/ActionButton/ShootButtonSVG";
 
 
 export const ActionButtonsComponent = () => {
@@ -12,15 +13,8 @@ export const ActionButtonsComponent = () => {
         
         <ActionButtonGroupDiv>
 
-        <ActionButtonDiv  >
-            <ActionButton pressed={clickStatus}/>
-            <ClickBtnLabel pressed={clickStatus}/>
-        </ActionButtonDiv>
-
-        <ActionButtonDiv >
-            <ActionButton pressed={jumpStatus}/>
-            <JumpBtnLabel pressed={jumpStatus}/>
-        </ActionButtonDiv>
+            <ShootButtonSVG isPressed={clickStatus}/> 
+            <FlyButtonSVG isPressed={jumpStatus}/>
 
         </ActionButtonGroupDiv>
     

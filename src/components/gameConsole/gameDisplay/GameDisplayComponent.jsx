@@ -22,16 +22,11 @@ export const GameDisplayComponent = ({children}) => {
 
     return (
         
-        <GameScreenDiv>
-            <GameDisplayDiv>
-                <GameDisplaySVG />
-            </GameDisplayDiv>
             <GameContainerDiv ref={gameRef}> 
                     {children}
         {pause ? <GameMenuComponent/> : null}
 
             </GameContainerDiv>
-        </GameScreenDiv>
 
     )
 };

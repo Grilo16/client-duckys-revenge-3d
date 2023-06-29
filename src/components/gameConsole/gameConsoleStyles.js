@@ -31,6 +31,7 @@ align-items: stretch;
 justify-items: center;
 align-content: stretch;
 overflow: hidden;
+background-color: blue;
 `
 
 export const GameConsoleDiv = styled.div`
@@ -38,7 +39,7 @@ display: grid;
 margin-left: 5rem;
 grid-column: 1;
 grid-row: 1/span 4;
-min-width: 90rem;
+width: clamp(30%, 90rem, 100%);
 
 `
 

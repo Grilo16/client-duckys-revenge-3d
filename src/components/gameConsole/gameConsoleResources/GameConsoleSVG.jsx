@@ -3,14 +3,13 @@ import * as React from "react";
 export const GameConsoleSVG = (props) => {
   return (
     <svg
+      width="102%"
       viewBox="0 0 1058 581"
- 
-      width="100%"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       {...props}
     >
-      <g filter="url(#prefix__filter0_dddiiiiii_339_44)">
+      <g filter="url(#prefix__filter0_dddiiiiii_587_33)">
         <path
           fillRule="evenodd"
           clipRule="evenodd"
@@ -22,7 +21,7 @@ export const GameConsoleSVG = (props) => {
       </g>
       <defs>
         <filter
-          id="prefix__filter0_dddiiiiii_339_44"
+          id="prefix__filter0_dddiiiiii_587_33"
           x={-11}
           y={-23}
           width={1069}
@@ -42,7 +41,7 @@ export const GameConsoleSVG = (props) => {
           <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" />
           <feBlend
             in2="BackgroundImageFix"
-            result="effect1_dropShadow_339_44"
+            result="effect1_dropShadow_587_33"
           />
           <feColorMatrix
             in="SourceAlpha"
@@ -54,8 +53,8 @@ export const GameConsoleSVG = (props) => {
           <feComposite in2="hardAlpha" operator="out" />
           <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" />
           <feBlend
-            in2="effect1_dropShadow_339_44"
-            result="effect2_dropShadow_339_44"
+            in2="effect1_dropShadow_587_33"
+            result="effect2_dropShadow_587_33"
           />
           <feColorMatrix
             in="SourceAlpha"
@@ -67,12 +66,12 @@ export const GameConsoleSVG = (props) => {
           <feComposite in2="hardAlpha" operator="out" />
           <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" />
           <feBlend
-            in2="effect2_dropShadow_339_44"
-            result="effect3_dropShadow_339_44"
+            in2="effect2_dropShadow_587_33"
+            result="effect3_dropShadow_587_33"
           />
           <feBlend
             in="SourceGraphic"
-            in2="effect3_dropShadow_339_44"
+            in2="effect3_dropShadow_587_33"
             result="shape"
           />
           <feColorMatrix
@@ -84,7 +83,7 @@ export const GameConsoleSVG = (props) => {
           <feGaussianBlur stdDeviation={8.5} />
           <feComposite in2="hardAlpha" operator="arithmetic" k2={-1} k3={1} />
           <feColorMatrix values="0 0 0 0 0.840389 0 0 0 0 0.839427 0 0 0 0 0.8875 0 0 0 1 0" />
-          <feBlend in2="shape" result="effect4_innerShadow_339_44" />
+          <feBlend in2="shape" result="effect4_innerShadow_587_33" />
           <feColorMatrix
             in="SourceAlpha"
             values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
@@ -95,8 +94,8 @@ export const GameConsoleSVG = (props) => {
           <feComposite in2="hardAlpha" operator="arithmetic" k2={-1} k3={1} />
           <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" />
           <feBlend
-            in2="effect4_innerShadow_339_44"
-            result="effect5_innerShadow_339_44"
+            in2="effect4_innerShadow_587_33"
+            result="effect5_innerShadow_587_33"
           />
           <feColorMatrix
             in="SourceAlpha"
@@ -108,8 +107,8 @@ export const GameConsoleSVG = (props) => {
           <feComposite in2="hardAlpha" operator="arithmetic" k2={-1} k3={1} />
           <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" />
           <feBlend
-            in2="effect5_innerShadow_339_44"
-            result="effect6_innerShadow_339_44"
+            in2="effect5_innerShadow_587_33"
+            result="effect6_innerShadow_587_33"
           />
           <feColorMatrix
             in="SourceAlpha"
@@ -121,8 +120,8 @@ export const GameConsoleSVG = (props) => {
           <feComposite in2="hardAlpha" operator="arithmetic" k2={-1} k3={1} />
           <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" />
           <feBlend
-            in2="effect6_innerShadow_339_44"
-            result="effect7_innerShadow_339_44"
+            in2="effect6_innerShadow_587_33"
+            result="effect7_innerShadow_587_33"
           />
           <feColorMatrix
             in="SourceAlpha"
@@ -134,8 +133,8 @@ export const GameConsoleSVG = (props) => {
           <feComposite in2="hardAlpha" operator="arithmetic" k2={-1} k3={1} />
           <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" />
           <feBlend
-            in2="effect7_innerShadow_339_44"
-            result="effect8_innerShadow_339_44"
+            in2="effect7_innerShadow_587_33"
+            result="effect8_innerShadow_587_33"
           />
           <feColorMatrix
             in="SourceAlpha"
@@ -147,8 +146,8 @@ export const GameConsoleSVG = (props) => {
           <feComposite in2="hardAlpha" operator="arithmetic" k2={-1} k3={1} />
           <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" />
           <feBlend
-            in2="effect8_innerShadow_339_44"
-            result="effect9_innerShadow_339_44"
+            in2="effect8_innerShadow_587_33"
+            result="effect9_innerShadow_587_33"
           />
         </filter>
       </defs>

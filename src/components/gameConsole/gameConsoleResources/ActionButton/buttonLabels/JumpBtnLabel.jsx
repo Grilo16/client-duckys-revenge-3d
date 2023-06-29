@@ -4,7 +4,7 @@ export const JumpBtnLabel = ({pressed, ...props}) => {
         width="100%"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        style={{gridColumn: "1", gridRow:"1", marginLeft: "6.9rem", marginTop: pressed? "5.2rem" : "5rem", scale: "1.5"}}
+        style={{ marginLeft: "6.9rem", marginTop: pressed? "5.2rem" : "5rem", scale: "1.5"}}
         {...props}
       >
 <path d="M11.7046 16V10.1818H15.1932V10.8068H12.4091V12.7727H14.9319V13.3977H12.4091V16H11.7046Z" fill="#979797"/>

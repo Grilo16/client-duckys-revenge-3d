@@ -42,14 +42,14 @@ min-width: 100%;
 `
 const MenuEntryFrames = keyframes`
 0% {height: 0rem; min-height: 0rem; }
-100% {height: 35rem;}
+100% {height: 50rem;}
 `
 
 
 const MenuContainerDiv = styled.div`
 position: relative;
 overflow: hidden;
-min-height: 35rem;
+min-height: 50rem;
 max-width: 17rem;
 background-color: #3A3238;
 animation-name: ${MenuEntryFrames};

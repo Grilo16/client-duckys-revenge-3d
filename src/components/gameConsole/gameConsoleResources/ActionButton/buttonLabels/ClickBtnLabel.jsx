@@ -4,7 +4,7 @@ export const ClickBtnLabel = ({pressed, ...props}) => {
       width="100%"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      style={{gridColumn: "1", gridRow:"1", marginLeft: "2.9rem", marginTop: pressed ? "0.8rem" : "0.5rem", scale: "0.8"}}
+      style={{marginLeft: "2.9rem", marginTop: pressed ? "0.8rem" : "0.5rem", scale: "0.8"}}
       {...props}
       >
         <path

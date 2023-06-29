@@ -24,9 +24,10 @@ export const MiscButtonsComponent = () => {
 
 const MiscButtonContainerDiv = styled.div`
 position: relative;
+grid-column: 7;
+justify-self: center;
+place-self: center;
+grid-row: 7;
 z-index: 1;
-top: -9.3rem;
-left: 0.5rem;
-overflow: hidden;
 
 `

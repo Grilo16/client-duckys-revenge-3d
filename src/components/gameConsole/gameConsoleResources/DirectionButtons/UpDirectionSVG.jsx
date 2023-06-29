@@ -3,7 +3,7 @@ export const UpDirectionSVG = (props) => {
       <svg
         width="100%"
         height="100%"
-        viewBox="0 0 250 255"
+        viewBox="0 0 255 255"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
         {...props}

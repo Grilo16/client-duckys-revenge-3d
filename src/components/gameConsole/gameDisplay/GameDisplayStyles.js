@@ -1,20 +1,25 @@
 import styled from "styled-components"
 
 export const GameContainerDiv = styled.div`
-position: relative;
-border-radius: 10px;
-grid-column: 1;
-grid-row: 1;
-width: 96.1%;
-margin: -1rem 1.9% 2.3rem;
+grid-column: 6/ span 3;
+grid-row: 3/ span 4;
+margin-left: 1%;
+
+position: relative; 
 display: grid;
-grid-template-columns: 1fr;
-background-color: #ffffff;
-justify-content: center;
+overflow: auto;
 align-items: stretch;
 justify-items: center;
 align-content: stretch;
-overflow: hidden;
+margin: 0.1rem;
+margin-left: 0.7rem;
+background-color: #ffffff;
+border: solid 0.5rem #FBFCBF;
+border-radius: 5px;
+
+ &::-webkit-scrollbar {
+     width: 0px;
+ }
 `
 
 export const GameScreenDiv = styled.div`

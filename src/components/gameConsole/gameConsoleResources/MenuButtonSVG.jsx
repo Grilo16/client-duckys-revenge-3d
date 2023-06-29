@@ -1,8 +1,9 @@
 export const MenuButton = ({pressed,...props}) => {
     const menuButton =  (
         <svg
-        width={56}
-        height={28}
+        width="60%"
+        style={{marginTop: "20%", marginLeft: "20%"}}
+        viewBox="0 0 56 28"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
         {...props}
@@ -124,9 +125,9 @@ export const MenuButton = ({pressed,...props}) => {
     const pressedMenuButton = (
 
         <svg
-        width={54}
-        height={26}
-        fill="none"
+        width="60%"
+        style={{marginTop: "20%", marginLeft: "20%"}}
+        viewBox="0 0 56 28"
         xmlns="http://www.w3.org/2000/svg"
         {...props}
       >
