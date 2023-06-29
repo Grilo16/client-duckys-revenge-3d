@@ -10,7 +10,7 @@ function App() {
 
 
   return (
-    <Router basename="/">
+    <Router basename={process.env.PUBLIC_URL}>
       <AppBaseComponent registeredPages={registeredPages}>
         <GameConsoleComponent>
         <Routes>
